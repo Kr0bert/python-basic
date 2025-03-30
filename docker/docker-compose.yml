@@ -1,0 +1,11 @@
+version: "3.12"
+services:
+  api:
+    build: 
+      context: ../
+      dockerfile: docker/Dockerfile
+      network: host
+    ports:
+      - "80:80"
+    environment:
+      MAX_WORKERS: 1

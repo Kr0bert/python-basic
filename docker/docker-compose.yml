@@ -1,11 +1,17 @@
-version: "3.12"
 services:
   api:
+    container_name: my_app
     build: 
       context: ../
       dockerfile: docker/Dockerfile
       network: host
+    volumes:
+      - .:/app  # Monter le répertoire local dans le conteneur
+    env_file:
+      - .env
+    
     ports:
       - "80:80"
     environment:
       MAX_WORKERS: 1
+    restart: unless-stopped

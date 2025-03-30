@@ -16,7 +16,7 @@ build:
 
 .PHONY: run
 run:
-	docker run -e MAX_WORKERS=2 -p 80:80 python_api
+	docker run -e MAX_WORKERS=2 -p 80:80 docker-api
 
 .PHONY: up
 up: 
